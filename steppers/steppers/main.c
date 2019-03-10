@@ -12,16 +12,21 @@ typedef enum _Day
     Saturday
 } Day;
 
-void DoVeryImportantStuff()
+typedef struct _Agenda
+{
+    Day Day;
+    int Coffee;
+} Agenda;
+
+void DoVeryImportantStuff(Agenda agenda)
 {
     printf("I'm doing incredibly important stuff right now.\n");
 
-    int coffee = 15;
-    while (coffee)
+    while (agenda.Coffee)
     {
         printf("Drinking some coffee...\n");
 
-        coffee--;
+        agenda.Coffee--;
     }
 }
 
@@ -40,10 +45,11 @@ bool IsWeekend(Day day)
 int main()
 {
     Day today = Friday;
+    Agenda agenda = { today, 20 };
 
     if (!IsWeekend(today))
     {
-        DoVeryImportantStuff();
+        DoVeryImportantStuff(agenda);
     }
 
     return 0;

@@ -154,7 +154,11 @@
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="extra.h" />
     <ClInclude Include="helpers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="custom.natvis.t" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
