@@ -23,8 +23,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Natvis Include="custom.natvis.t">
+    <Natvis Include="custom.natvis">
       <Filter>Natvis</Filter>
     </Natvis>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data-custom.natvis.t">
+      <Filter>Natvis</Filter>
+    </None>
   </ItemGroup>
 </Project>

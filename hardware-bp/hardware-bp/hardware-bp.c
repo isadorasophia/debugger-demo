@@ -10,14 +10,14 @@ void do_stuff(int arr[], int sz)
 
 int main()
 {
-    int random = 42;
+    int meaningOfLife = 42;
     int arr[] = { 5, 10, 15 };
 
-    int ab = 3;
+    int useless = 3;
 
     do_stuff(arr, sizeof(arr));
 
-    printf("My lucky number is %d!\n", random);
+    printf("My lucky number is %d!\n", meaningOfLife);
 
     return 0;
 }

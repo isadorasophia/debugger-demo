@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
 <Type Name="_Agenda">
   <DisplayString>My own agenda...</DisplayString>
   <Expand>
@@ -12,4 +10,3 @@
 <Type Name="Bool">
   <DisplayString>{Value != 0}</DisplayString>
 </Type>
-</AutoVisualizer>

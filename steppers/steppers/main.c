@@ -1,56 +1,52 @@
 #include <stdio.h>
 #include "helpers.h"
 
-typedef enum _Day
+int main()
 {
-    Sunday,
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thrusday,
-    Friday,
-    Saturday
-} Day;
+    Day today = Monday;                 // step over
+    Agenda agenda = { today, 20 };      // step over
 
-typedef struct _Agenda
-{
-    Day Day;
-    int Coffee;
-} Agenda;
-
-void DoVeryImportantStuff(Agenda agenda)
-{
-    printf("I'm doing incredibly important stuff right now.\n");
-
-    while (agenda.Coffee)
+    if (!IsWeekend(today))              // step in
     {
-        printf("Drinking some coffee...\n");
-
-        agenda.Coffee--;
+        DoVeryImportantStuff(&agenda);   // step in
     }
+
+    CleanUp();
+
+    return 0;
 }
 
 bool IsWeekend(Day day)
 {
-    switch (day)
+    bool result = false;    // step in => fail
+    switch (day)            // step out
     {
-        case Sunday:
-        case Saturday:
-            return true;
+    case Sunday:
+    case Saturday:
+        return true;
     }
 
     return false;
 }
 
-int main()
+void DoVeryImportantStuff(Agenda* agenda)
 {
-    Day today = Friday;
-    Agenda agenda = { today, 20 };
+    printf("I'm doing incredibly important stuff right now.\n"); // step instruction!
 
-    if (!IsWeekend(today))
+    if (agenda->Day == Monday)                                    // step over
     {
-        DoVeryImportantStuff(agenda);
+        while (agenda->Coffee--)
+        {
+            printf("Drinking some coffee...\n");
+        }
     }
 
-    return 0;
+    return;                                                      // set next instruction => line 27
+}
+
+int CleanUp()
+{
+    printf("Cleaning, cleaning...\n"); // step into...
+
+    return 0;                          // step in
 }
